@@ -7045,11 +7045,11 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "D:\\GIT\\TP1_Inf1035\\JeuxCarte\\JeuxCarte\\JeuxCarte.csproj",
+      "projectUniqueName": "D:\\GIT\\TPINF1035\\JeuxCarte\\JeuxCarte\\JeuxCarte.csproj",
       "projectName": "JeuxCarte",
-      "projectPath": "D:\\GIT\\TP1_Inf1035\\JeuxCarte\\JeuxCarte\\JeuxCarte.csproj",
+      "projectPath": "D:\\GIT\\TPINF1035\\JeuxCarte\\JeuxCarte\\JeuxCarte.csproj",
       "packagesPath": "C:\\Users\\mcouture\\.nuget\\packages\\",
-      "outputPath": "D:\\GIT\\TP1_Inf1035\\JeuxCarte\\JeuxCarte\\obj\\",
+      "outputPath": "D:\\GIT\\TPINF1035\\JeuxCarte\\JeuxCarte\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\mcouture\\AppData\\Roaming\\NuGet\\NuGet.Config",
