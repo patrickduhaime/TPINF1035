@@ -18,6 +18,8 @@ namespace JeuxCarte
         public Jeux(int NbJoueur)
         {
             this.NbJoueurs = NbJoueur;
+            //Création des 52 cartes
+            CreationDuJeuxdeCartes();
         }
 
         //Getter et Setter
@@ -59,6 +61,18 @@ namespace JeuxCarte
         public void DonneOrdreJoueurs()
         {
 
+        }
+
+        private void CreationDuJeuxdeCartes()
+        {
+            foreach (Carte.EnumSorte Sorte in Enum.GetValues(typeof(Carte.EnumSorte)))
+            {
+                foreach (Carte.EnumValeur Valeur in Enum.GetValues(typeof(Carte.EnumValeur)))
+                {
+                    Carte UneCarte = new Carte(Sorte, Valeur);
+                    JeuxdeCartes.Add(UneCarte);
+                }
+            }
         }
     }
 
