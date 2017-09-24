@@ -7,7 +7,7 @@ Fait avec Visual Studio 2017
 
 Aide
 
-	*[Tuto rapide GITHUB](https://developer.mozilla.org/fr/Apprendre/Utiliser_les_pages_GitHub)
-	*[Aide rapide pour écrire le fichier MD](https://fr.wikipedia.org/wiki/Markdown)
+	* [Tuto rapide GITHUB](https://developer.mozilla.org/fr/Apprendre/Utiliser_les_pages_GitHub)
+	* [Aide rapide pour écrire le fichier MD](https://fr.wikipedia.org/wiki/Markdown)
 	
 TP1
