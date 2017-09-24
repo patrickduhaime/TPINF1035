@@ -21,7 +21,7 @@ namespace JeuxCarte
             this.NbJoueurs = NbJoueur;
             //Création des 52 cartes
             CreationDuJeuxdeCartes();
-            
+            MelangeListe(JeuxdeCartes); //Mélange le jeux après création
         }
 
         //Getter et Setter
@@ -41,7 +41,16 @@ namespace JeuxCarte
 
         public bool GetEtatPiocheVide
         {
-            get { return PiocheVide; }
+            get {
+                 if (JeuxdeCartes.Count == 0)
+                {
+                    PiocheVide = true;
+                }
+                else
+                {
+                    PiocheVide = false;
+                }
+            return PiocheVide; }
         }
 
         public List<Joueur> GetListdesJoueurs
@@ -50,20 +59,12 @@ namespace JeuxCarte
         }
 
         //Méthodes
-        public void BrasseCartes()
-        {
-
-        }
 
         public void DistributCartes()
         {
 
         }
 
-        public void DonneOrdreJoueurs()
-        {
-
-        }
         public void AjoutJoueur(Joueur LeJoueur)
         {
             ListedeJoueurs.Add(LeJoueur);
@@ -81,7 +82,6 @@ namespace JeuxCarte
                     JeuxdeCartes.Add(UneCarte);
                 }
             }
-            MelangeListe(JeuxdeCartes); //Mélange le jeux après création
         }
 
         public void MelangeJoueurs()

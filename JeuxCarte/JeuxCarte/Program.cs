@@ -43,6 +43,7 @@ namespace JeuxCarte
             }
             Console.WriteLine("Le nombre de cartes dans la pioche: {0} cartes", LeJeux.GetNombreCartePioche);
             Console.WriteLine("Le jeux est brasse");
+            Console.WriteLine("Est-ce que la pioche est vide? {0}", LeJeux.GetEtatPiocheVide);
             Console.ReadKey(); //Permet d'arreter la console.
         }
     }
