@@ -6,14 +6,25 @@ namespace JeuxCarte
 {
     class Carte
     {
-        private string couleur = "";
+        //Définition des énumérations
+        public enum enumSorte { Coeur, Pique, Treffle, Carreau }
+        public enum enumValeur { As, deux, trois, quatre, cinq, six, sept, huit, neuf, dix, Valet, Dame, Roi}
 
-        public string Couleur
+        //Déclaration des varibles encapsulées.
+        private string sorte = "";
+        private string valeur = "";
+
+        //Getter et setter de la carte
+        public string Sorte
         {
-            get { return couleur; }
-            set { couleur = value; }
+            get { return sorte; }
+            set { sorte = value; }
+        }
 
-
+        public string Valeur
+        {
+            get { return valeur; }
+            set { valeur = value; }
         }
     }
 }

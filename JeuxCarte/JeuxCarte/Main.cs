@@ -6,8 +6,8 @@ namespace JeuxCarte
 {
     class Main
     {
-        public enum sorte {Coeur, Pique, Treffle, Carreau
-
+        
+        
         }
     }
 }
