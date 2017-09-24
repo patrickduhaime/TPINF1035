@@ -7,12 +7,14 @@ namespace JeuxCarte
     class Joueur
     {
         private String Nom = "";
+        private String Prenom = "";
         private Main Main = new Main();
 
         //Constructeur
-        public Joueur(string Nom)
+        public Joueur(string Nom, string Prenom)
         {
             this.Nom = Nom;
+            this.Prenom = Prenom;
         }
 
         //Getter et setter
@@ -20,6 +22,12 @@ namespace JeuxCarte
         {
             get { return Nom; }
             set { value = Nom; }
+        }
+
+        public String PrenomJoueur
+        {
+            get { return Prenom; }
+            set { value = Prenom; }
         }
 
         public Main MainJoueur

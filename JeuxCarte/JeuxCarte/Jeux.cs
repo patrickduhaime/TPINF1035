@@ -10,6 +10,7 @@ namespace JeuxCarte
         private List<Carte> JeuxdeCartes = new List<Carte>();
         private List<Carte> Pile = new List<Carte>();
         private List<Carte> Pioche = new List<Carte>();
+        private List<Joueur> ListedeJoueur = new List<Joueur>();
         private bool PiocheVide = false;
         private int NbJoueurs = 0;
         private List<Joueur> OrdredesJoueurs = new List<Joueur>();
@@ -48,6 +49,11 @@ namespace JeuxCarte
             get { return OrdredesJoueurs; }
         }
 
+        public List<Joueur> ListdesJoueurs
+        {
+            get { return ListedeJoueur; }
+        }
+
         //Méthodes
         public void BrasseCartes()
         {
@@ -63,6 +69,12 @@ namespace JeuxCarte
         {
 
         }
+        public void AjoutJoueur(Joueur LeJoueur)
+        {
+            ListedeJoueur.Add(LeJoueur);
+        }
+
+
 
         private void CreationDuJeuxdeCartes()
         {
