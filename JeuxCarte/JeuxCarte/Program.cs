@@ -1,4 +1,6 @@
-﻿using System;
+﻿//TP1 INF1035
+//Couture, Duhaime, Picard
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -22,6 +24,8 @@ namespace JeuxCarte
                 LeJeux.AjoutJoueur(new Joueur(NomComplet[0], NomComplet[1]));
                 
             }
+
+            //Affiche l'état du jeux
             Console.WriteLine("");
             Console.WriteLine("**************************************************");
             Console.WriteLine("*****************Etats du jeux********************");
