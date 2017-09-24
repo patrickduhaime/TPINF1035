@@ -30,12 +30,19 @@ namespace JeuxCarte
             Console.WriteLine("**************************************************");
             Console.WriteLine("*****************Etats du jeux********************");
             Console.WriteLine("**************************************************");
-            Console.WriteLine("Le nombre de joueurs est {0}", LeJeux.NombreJoueurs);
-            foreach (Joueur LeJoueur in LeJeux.ListdesJoueurs)
+            Console.WriteLine("Le nombre de joueurs est {0}", LeJeux.GetNombreJoueurs);
+            foreach (Joueur LeJoueur in LeJeux.GetListdesJoueurs)
             {
                 Console.WriteLine("Joueur: {0} {1}", LeJoueur.PrenomJoueur, LeJoueur.NomJoueur); 
             }
-            Console.WriteLine("Le nombre de cartes dans la pioche: {0} cartes", LeJeux.NombreCartePioche);
+            Console.WriteLine("Mélange de l'ordre des joueurs, voici le nouvel ordre");
+            LeJeux.MelangeJoueurs();
+            foreach (Joueur LeJoueur in LeJeux.GetListdesJoueurs)
+            {
+                Console.WriteLine("Joueur: {0} {1}", LeJoueur.PrenomJoueur, LeJoueur.NomJoueur);
+            }
+
+            Console.WriteLine("Le nombre de cartes dans la pioche: {0} cartes", LeJeux.GetNombreCartePioche);
             Console.ReadKey(); //Permet d'arreter la console.
         }
     }

@@ -25,31 +25,26 @@ namespace JeuxCarte
         }
 
         //Getter et Setter
-        public int NombreJoueurs
+        public int GetNombreJoueurs
         {
             get { return this.NbJoueurs; }
         }
-        public int NombreCartePioche
+        public int GetNombreCartePioche
         {
             get { return Pioche.Count; }
         }
 
-        public int NombreCartePile
+        public int GetNombreCartePile
         {
             get { return Pile.Count; }
         }
 
-        public bool EtatPiocheVide
+        public bool GetEtatPiocheVide
         {
             get { return PiocheVide; }
         }
 
-        public List<Joueur> OrdreJoueurs
-        {
-            get { return OrdredesJoueurs; }
-        }
-
-        public List<Joueur> ListdesJoueurs
+        public List<Joueur> GetListdesJoueurs
         {
             get { return ListedeJoueur; }
         }
@@ -87,6 +82,24 @@ namespace JeuxCarte
                 }
             }
         }
-    }
 
+        public void MelangeJoueurs()
+        {
+            MelangeListe(this.ListedeJoueur);
+        }
+
+        private void MelangeListe<T>(List<T> LaListe)
+        {
+            Random rnd = new Random();
+            int n = LaListe.Count;
+            while (n > 1)
+            {
+                int k = (rnd.Next(0, n) % n);
+                n--;
+                T value = LaListe[k];
+                LaListe[k] = LaListe[n];
+                LaListe[n] = value;
+            }
+        }
+    }
 }

@@ -7,4 +7,4 @@ Fait avec Visual Studio 2017
 
 [Tuto rapide GITHUB](https://developer.mozilla.org/fr/Apprendre/Utiliser_les_pages_GitHub)
 
-Mise à jour le 24 septembre 2017 13h10.
+Mise à jour le 24 septembre 2017 13h57.
