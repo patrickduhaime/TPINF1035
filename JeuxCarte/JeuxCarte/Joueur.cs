@@ -28,7 +28,10 @@ namespace JeuxCarte
         }
 
         //Méthode
-
+        public override string ToString()
+        {
+            return base.ToString();
+        }
 
     }
 }

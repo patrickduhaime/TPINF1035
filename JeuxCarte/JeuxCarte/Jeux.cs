@@ -6,5 +6,7 @@ namespace JeuxCarte
 {
     class Jeux
     {
+        private List<Carte> JeuxdeCartes = new List<Carte>();
+
     }
 }

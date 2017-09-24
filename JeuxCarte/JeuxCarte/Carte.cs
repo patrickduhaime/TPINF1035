@@ -7,27 +7,27 @@ namespace JeuxCarte
     class Carte
     {
         //Définition des énumérations
-        public enum enumSorte { Coeur, Pique, Treffle, Carreau }
-        public enum enumValeur { As, deux, trois, quatre, cinq, six, sept, huit, neuf, dix, Valet, Dame, Roi}
+        public enum EnumSorte { Coeur, Pique, Treffle, Carreau }
+        public enum EnumValeur { As, deux, trois, quatre, cinq, six, sept, huit, neuf, dix, Valet, Dame, Roi}
         
         //Déclaration des variables encapsulées.
-        private enumSorte sorte;
-        private enumValeur valeur;
+        private EnumSorte sorte;
+        private EnumValeur valeur;
 
         //Constructeur
-        public Carte( enumSorte sorte, enumValeur valeur ){
+        public Carte(EnumSorte sorte, EnumValeur valeur ){
             this.sorte = sorte;
             this.valeur = valeur;
         }
 
         //Getter et setter de la carte
-        public enumSorte Sorte
+        public EnumSorte Sorte
         {
             get { return sorte; }
             set { sorte = value; }
         }
 
-        public enumValeur Valeur
+        public EnumValeur Valeur
         {
             get { return valeur; }
             set { valeur = value; }
