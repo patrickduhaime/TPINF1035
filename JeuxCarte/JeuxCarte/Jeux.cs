@@ -10,7 +10,7 @@ namespace JeuxCarte
         private List<Carte> JeuxdeCartes = new List<Carte>();
         private List<Carte> Pile = new List<Carte>();
         private List<Carte> Pioche = new List<Carte>();
-        private bool PiocheVide;
+        private bool PiocheVide = false;
         private int NbJoueurs = 0;
         private List<Joueur> OrdredesJoueurs = new List<Joueur>();
 
