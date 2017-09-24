@@ -20,11 +20,46 @@ namespace JeuxCarte
             this.NbJoueurs = NbJoueur;
         }
 
-
         //Getter et Setter
         public int NombreJoueurs
         {
             get { return this.NbJoueurs; }
         }
+        public int NombreCartePioche
+        {
+            get { return Pioche.Count; }
+        }
+
+        public int NombreCartePile
+        {
+            get { return Pile.Count; }
+        }
+
+        public bool EtatPiocheVide
+        {
+            get { return PiocheVide; }
+        }
+
+        public List<Joueur> OrdreJoueurs
+        {
+            get { return OrdredesJoueurs; }
+        }
+
+        //Méthodes
+        public void BrasseCartes()
+        {
+
+        }
+
+        public void DistributCartes()
+        {
+
+        }
+
+        public void DonneOrdreJoueurs()
+        {
+
+        }
     }
+
 }
