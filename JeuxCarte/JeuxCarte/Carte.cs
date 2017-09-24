@@ -11,23 +11,23 @@ namespace JeuxCarte
         public enum enumValeur { As, deux, trois, quatre, cinq, six, sept, huit, neuf, dix, Valet, Dame, Roi}
         
         //Déclaration des variables encapsulées.
-        private string sorte = "";
-        private string valeur = "";
+        private enumSorte sorte;
+        private enumValeur valeur;
 
         //Constructeur
         public Carte( enumSorte sorte, enumValeur valeur ){
-            sorte = sorte;
-            valeur = valeur;
+            this.sorte = sorte;
+            this.valeur = valeur;
         }
 
         //Getter et setter de la carte
-        public string Sorte
+        public enumSorte Sorte
         {
             get { return sorte; }
             set { sorte = value; }
         }
 
-        public string Valeur
+        public enumValeur Valeur
         {
             get { return valeur; }
             set { valeur = value; }
