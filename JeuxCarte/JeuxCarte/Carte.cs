@@ -10,7 +10,7 @@ namespace JeuxCarte
         public enum enumSorte { Coeur, Pique, Treffle, Carreau }
         public enum enumValeur { As, deux, trois, quatre, cinq, six, sept, huit, neuf, dix, Valet, Dame, Roi}
         
-        //Déclaration des varibles encapsulées.
+        //Déclaration des variables encapsulées.
         private string sorte = "";
         private string valeur = "";
 
