@@ -9,8 +9,8 @@ namespace JeuxCarte
         //Déclartation des variables privées.
         private List<Carte> JeuxdeCartes = new List<Carte>();
         private List<Carte> Pile = new List<Carte>();
-        private List<Carte> Pioche = new List<Carte>();
-        private List<Joueur> ListedeJoueur = new List<Joueur>();
+        //private List<Carte> Pioche = new List<Carte>();  Ajit sur la pile directement
+        private List<Joueur> ListedeJoueurs = new List<Joueur>();
         private bool PiocheVide = false;
         private int NbJoueurs = 0;
         private List<Joueur> OrdredesJoueurs = new List<Joueur>();
@@ -21,7 +21,7 @@ namespace JeuxCarte
             this.NbJoueurs = NbJoueur;
             //Création des 52 cartes
             CreationDuJeuxdeCartes();
-            Pioche = JeuxdeCartes;
+            
         }
 
         //Getter et Setter
@@ -31,7 +31,7 @@ namespace JeuxCarte
         }
         public int GetNombreCartePioche
         {
-            get { return Pioche.Count; }
+            get { return JeuxdeCartes.Count; }
         }
 
         public int GetNombreCartePile
@@ -46,7 +46,7 @@ namespace JeuxCarte
 
         public List<Joueur> GetListdesJoueurs
         {
-            get { return ListedeJoueur; }
+            get { return ListedeJoueurs; }
         }
 
         //Méthodes
@@ -66,7 +66,7 @@ namespace JeuxCarte
         }
         public void AjoutJoueur(Joueur LeJoueur)
         {
-            ListedeJoueur.Add(LeJoueur);
+            ListedeJoueurs.Add(LeJoueur);
         }
 
 
@@ -81,11 +81,12 @@ namespace JeuxCarte
                     JeuxdeCartes.Add(UneCarte);
                 }
             }
+            MelangeListe(JeuxdeCartes); //Mélange le jeux après création
         }
 
         public void MelangeJoueurs()
         {
-            MelangeListe(this.ListedeJoueur);
+            MelangeListe(this.ListedeJoueurs);
         }
 
         private void MelangeListe<T>(List<T> LaListe)
