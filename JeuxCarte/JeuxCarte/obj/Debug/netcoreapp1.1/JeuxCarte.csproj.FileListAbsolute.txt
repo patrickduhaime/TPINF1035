@@ -1,0 +1,10 @@
+D:\GIT\TPINF1035\JeuxCarte\JeuxCarte\bin\Debug\netcoreapp1.1\JeuxCarte.deps.json
+D:\GIT\TPINF1035\JeuxCarte\JeuxCarte\bin\Debug\netcoreapp1.1\JeuxCarte.runtimeconfig.json
+D:\GIT\TPINF1035\JeuxCarte\JeuxCarte\bin\Debug\netcoreapp1.1\JeuxCarte.runtimeconfig.dev.json
+D:\GIT\TPINF1035\JeuxCarte\JeuxCarte\bin\Debug\netcoreapp1.1\JeuxCarte.dll
+D:\GIT\TPINF1035\JeuxCarte\JeuxCarte\bin\Debug\netcoreapp1.1\JeuxCarte.pdb
+D:\GIT\TPINF1035\JeuxCarte\JeuxCarte\obj\Debug\netcoreapp1.1\JeuxCarte.csprojResolveAssemblyReference.cache
+D:\GIT\TPINF1035\JeuxCarte\JeuxCarte\obj\Debug\netcoreapp1.1\JeuxCarte.csproj.CoreCompileInputs.cache
+D:\GIT\TPINF1035\JeuxCarte\JeuxCarte\obj\Debug\netcoreapp1.1\JeuxCarte.AssemblyInfo.cs
+D:\GIT\TPINF1035\JeuxCarte\JeuxCarte\obj\Debug\netcoreapp1.1\JeuxCarte.dll
+D:\GIT\TPINF1035\JeuxCarte\JeuxCarte\obj\Debug\netcoreapp1.1\JeuxCarte.pdb

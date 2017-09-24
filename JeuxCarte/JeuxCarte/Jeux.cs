@@ -20,6 +20,7 @@ namespace JeuxCarte
             this.NbJoueurs = NbJoueur;
             //Création des 52 cartes
             CreationDuJeuxdeCartes();
+            Pioche = JeuxdeCartes;
         }
 
         //Getter et Setter
