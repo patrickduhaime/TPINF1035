@@ -9,11 +9,11 @@ namespace JeuxCarte
     class Main
     {
         //Déclaration des variables encapsulées.
-        List<Carte> listeCartes = new List<Carte>();
+        private List<Carte> listeCartes = new List<Carte>();
        
 
         //Getter et setter
-        public int nbCartes
+        public int NbCartes
         {
             get { return listeCartes.Count; }
             
@@ -28,17 +28,17 @@ namespace JeuxCarte
 
         public bool EnleveCarte(int index)
         {
-            bool OpComplete = true; 
+            bool OpCompletee = true; 
             if (index < listeCartes.Count -1)
             {
                 listeCartes.RemoveAt(index);
             }
             else
             {
-                OpComplete = false;
+                OpCompletee = false;
             }
 
-            return OpComplete;
+            return OpCompletee;
         }
 
         public override string ToString()

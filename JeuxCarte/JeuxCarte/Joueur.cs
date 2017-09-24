@@ -6,5 +6,6 @@ namespace JeuxCarte
 {
     class Joueur
     {
+
     }
 }
