@@ -24,6 +24,8 @@ namespace JeuxCarte
                 LeJeux.AjoutJoueur(new Joueur(NomComplet[0], NomComplet[1]));
                 
             }
+            LeJeux.DistributCartes();
+            Console.ReadKey(); //Permet d'arreter la console.
 
             //Affiche l'état du jeux
             Console.WriteLine("");

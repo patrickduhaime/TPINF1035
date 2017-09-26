@@ -8,3 +8,13 @@ D:\GIT\TPINF1035\JeuxCarte\JeuxCarte\obj\Debug\netcoreapp1.1\JeuxCarte.csproj.Co
 D:\GIT\TPINF1035\JeuxCarte\JeuxCarte\obj\Debug\netcoreapp1.1\JeuxCarte.AssemblyInfo.cs
 D:\GIT\TPINF1035\JeuxCarte\JeuxCarte\obj\Debug\netcoreapp1.1\JeuxCarte.dll
 D:\GIT\TPINF1035\JeuxCarte\JeuxCarte\obj\Debug\netcoreapp1.1\JeuxCarte.pdb
+C:\Users\Patrick\Documents\GitLocalDepot\TPINF1035\JeuxCarte\JeuxCarte\bin\Debug\netcoreapp1.1\JeuxCarte.deps.json
+C:\Users\Patrick\Documents\GitLocalDepot\TPINF1035\JeuxCarte\JeuxCarte\bin\Debug\netcoreapp1.1\JeuxCarte.runtimeconfig.json
+C:\Users\Patrick\Documents\GitLocalDepot\TPINF1035\JeuxCarte\JeuxCarte\bin\Debug\netcoreapp1.1\JeuxCarte.runtimeconfig.dev.json
+C:\Users\Patrick\Documents\GitLocalDepot\TPINF1035\JeuxCarte\JeuxCarte\bin\Debug\netcoreapp1.1\JeuxCarte.dll
+C:\Users\Patrick\Documents\GitLocalDepot\TPINF1035\JeuxCarte\JeuxCarte\bin\Debug\netcoreapp1.1\JeuxCarte.pdb
+C:\Users\Patrick\Documents\GitLocalDepot\TPINF1035\JeuxCarte\JeuxCarte\obj\Debug\netcoreapp1.1\JeuxCarte.csprojResolveAssemblyReference.cache
+C:\Users\Patrick\Documents\GitLocalDepot\TPINF1035\JeuxCarte\JeuxCarte\obj\Debug\netcoreapp1.1\JeuxCarte.csproj.CoreCompileInputs.cache
+C:\Users\Patrick\Documents\GitLocalDepot\TPINF1035\JeuxCarte\JeuxCarte\obj\Debug\netcoreapp1.1\JeuxCarte.AssemblyInfo.cs
+C:\Users\Patrick\Documents\GitLocalDepot\TPINF1035\JeuxCarte\JeuxCarte\obj\Debug\netcoreapp1.1\JeuxCarte.dll
+C:\Users\Patrick\Documents\GitLocalDepot\TPINF1035\JeuxCarte\JeuxCarte\obj\Debug\netcoreapp1.1\JeuxCarte.pdb

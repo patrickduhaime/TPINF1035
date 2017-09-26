@@ -62,7 +62,20 @@ namespace JeuxCarte
 
         public void DistributCartes()
         {
+            int k = 0;
 
+            while (k < 8 * GetNombreJoueurs)
+            {
+                for (int j = 0; j < 8; j++)
+                {
+                    for (int i = 0; i < GetNombreJoueurs; i++)
+                    {
+                        Console.WriteLine(ListedeJoueurs[i].NomJoueur + " " + ListedeJoueurs[i].PrenomJoueur);
+                        Console.WriteLine(JeuxdeCartes[k++]);
+
+                    }
+                }
+            }    
         }
 
         public void AjoutJoueur(Joueur LeJoueur)
