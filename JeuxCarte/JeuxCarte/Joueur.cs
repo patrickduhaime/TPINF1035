@@ -8,13 +8,14 @@ namespace JeuxCarte
     {
         private String Nom = "";
         private String Prenom = "";
-        private Main Main = new Main();
+        private Main Main;
 
         //Constructeur
         public Joueur(string Nom, string Prenom)
         {
             this.Nom = Nom;
             this.Prenom = Prenom;
+            Main = new Main();
         }
 
         //Getter et setter

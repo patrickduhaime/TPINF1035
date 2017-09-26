@@ -7,22 +7,26 @@ namespace JeuxCarte
     class Jeux
     {
         //Déclartation des variables privées.
-        private List<Carte> JeuxdeCartes = new List<Carte>();
+        private List<Carte> JeuxdeCartes;
         private List<Carte> PileDepot;
-        //private List<Carte> Pioche = new List<Carte>();  Ajit sur la pile directement
-        private List<Joueur> ListedeJoueurs = new List<Joueur>();
+        private List<Carte> Pioche;
+        private List<Joueur> ListedeJoueurs;
         private bool PiocheVide = false;
         private int NbJoueurs = 0;
-        private List<Joueur> OrdredesJoueurs = new List<Joueur>();
+        private List<Joueur> OrdredesJoueurs;
 
         //Constructeur
         public Jeux(int NbJoueur)
         {
             this.NbJoueurs = NbJoueur;
             //Création des 52 cartes
+            JeuxdeCartes = new List<Carte>();
             CreationDuJeuxdeCartes();
             MelangeListe(JeuxdeCartes); //Mélange le jeux après création
             PileDepot = new List<Carte>();
+            ListedeJoueurs = new List<Joueur>();
+            Pioche = new List<Carte>();
+            OrdredesJoueurs = new List<Joueur>();
         }
 
         //Getter et Setter
