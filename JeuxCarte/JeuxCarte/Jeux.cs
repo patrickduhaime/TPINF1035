@@ -8,7 +8,7 @@ namespace JeuxCarte
     {
         //Déclartation des variables privées.
         private List<Carte> JeuxdeCartes = new List<Carte>();
-        private List<Carte> Pile = new List<Carte>();
+        private List<Carte> PileDepot;
         //private List<Carte> Pioche = new List<Carte>();  Ajit sur la pile directement
         private List<Joueur> ListedeJoueurs = new List<Joueur>();
         private bool PiocheVide = false;
@@ -22,6 +22,7 @@ namespace JeuxCarte
             //Création des 52 cartes
             CreationDuJeuxdeCartes();
             MelangeListe(JeuxdeCartes); //Mélange le jeux après création
+            PileDepot = new List<Carte>();
         }
 
         //Getter et Setter
@@ -36,7 +37,7 @@ namespace JeuxCarte
 
         public int GetNombreCartePile
         {
-            get { return Pile.Count; }
+            get { return PileDepot.Count; }
         }
 
         public bool GetEtatPiocheVide
@@ -74,7 +75,20 @@ namespace JeuxCarte
                         JeuxdeCartes.RemoveAt(k++);
                     }
                 }
-            }    
+            }
+            AjoutCartePileDepot(JeuxdeCartes[k]);
+            AfficherCartePileDepot(PileDepot[PileDepot.Count - 1]);
+            JeuxdeCartes.RemoveAt(k);
+        }
+
+        public void AjoutCartePileDepot(Carte carte)
+        {
+            PileDepot.Add(carte);
+        }
+
+        public void AfficherCartePileDepot(Carte carte)
+        {
+            Console.WriteLine("Carte de la pile de depot:  {0} {1}", carte.Valeur, carte.Sorte);
         }
 
         public void AjoutJoueur(Joueur LeJoueur)
