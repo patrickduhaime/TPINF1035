@@ -70,9 +70,8 @@ namespace JeuxCarte
                 {
                     for (int i = 0; i < GetNombreJoueurs; i++)
                     {
-                        Console.WriteLine(ListedeJoueurs[i].NomJoueur + " " + ListedeJoueurs[i].PrenomJoueur);
-                        Console.WriteLine(JeuxdeCartes[k++]);
-
+                        ListedeJoueurs[i].MainJoueur.AjoutCarte(JeuxdeCartes[k]);
+                        JeuxdeCartes.RemoveAt(k++);
                     }
                 }
             }    
