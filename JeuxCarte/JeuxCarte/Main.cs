@@ -9,7 +9,15 @@ namespace JeuxCarte
     class Main
     {
         //Déclaration des variables encapsulées.
-        private List<Carte> listeCartes = new List<Carte>();
+        private List<Carte> listeCartes;
+
+        //Constructeur de la classe Main
+        public Main()
+        {
+            listeCartes = new List<Carte>();
+        }
+
+      
        
 
         //Getter et setter
@@ -39,6 +47,14 @@ namespace JeuxCarte
             }
 
             return OpCompletee;
+        }
+
+        public void ListMain()
+        {
+          foreach ( Carte carte in this.listeCartes)
+            {
+                Console.WriteLine("Carte: {0} {1}", carte.Valeur, carte.Sorte);
+            }
         }
 
         public override string ToString()
