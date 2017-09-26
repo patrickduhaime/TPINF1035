@@ -100,13 +100,16 @@ namespace JeuxCarte
         }
 
 
+        /*
+         *Methode pour choisir le premier joueur aleatoirement et demarre la parti
+         *en deposant une premiere carte sur la pile de depot
+        */
         public void PremierJoueur()
         {
             Random rand = new Random();
             int index = rand.Next(0, GetNombreJoueurs - 1);
             int indexCarte = rand.Next(0, 7);
-            Carte carte = ListedeJoueurs[index].MainJoueur.IndexDeCarte(indexCarte);
-            AjoutCartePileDepot(carte);
+            AjoutCartePileDepot(ListedeJoueurs[index].MainJoueur.IndexDeCarte(indexCarte));
             ListedeJoueurs[index].MainJoueur.EnleveCarte(indexCarte);
         }
 
