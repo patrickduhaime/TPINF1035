@@ -49,14 +49,20 @@ namespace JeuxCarte
             return OpCompletee;
         }
 
+        public Carte IndexDeCarte(int index)
+        {
+            return listeCartes[index];
+        }
+
         public void ListMain()
         {
             int i = 0;
           foreach ( Carte carte in listeCartes)
             {
-                Console.WriteLine("Carte" + i + " {0} {1}", carte.Valeur, carte.Sorte);
+                Console.WriteLine("Carte" + i + " {0} {1} {2}", listeCartes[i], carte.Valeur, carte.Sorte);
                 i++;
             }
+            Console.WriteLine("");
         }
 
         public override string ToString()

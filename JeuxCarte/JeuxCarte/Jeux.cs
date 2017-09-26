@@ -80,9 +80,8 @@ namespace JeuxCarte
                     }
                 }
             }
-            AjoutCartePileDepot(JeuxdeCartes[k]);
+            PremierJoueur();
             AfficherCartePileDepot(PileDepot[PileDepot.Count - 1]);
-            JeuxdeCartes.RemoveAt(k);
         }
 
         public void AjoutCartePileDepot(Carte carte)
@@ -100,6 +99,16 @@ namespace JeuxCarte
             ListedeJoueurs.Add(LeJoueur);
         }
 
+
+        public void PremierJoueur()
+        {
+            Random rand = new Random();
+            int index = rand.Next(0, GetNombreJoueurs - 1);
+            int indexCarte = rand.Next(0, 7);
+            Carte carte = ListedeJoueurs[index].MainJoueur.IndexDeCarte(indexCarte);
+            AjoutCartePileDepot(carte);
+            ListedeJoueurs[index].MainJoueur.EnleveCarte(indexCarte);
+        }
 
 
         private void CreationDuJeuxdeCartes()

@@ -3,6 +3,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace JeuxCarte
 {
@@ -11,24 +12,22 @@ namespace JeuxCarte
         static void Main(string[] args)
         {
             Console.WriteLine("***Bienvenue au jeux de la pioche***");
-            //Demande le nombre de joueurs
-            Console.WriteLine("Combien de joueurs(2-4)");
-            int nbJoueurs = Int16.Parse(Console.ReadLine());  //Conversion String en Int
+            //Le nombre de joueurs
+            Console.WriteLine("Partie de 3 Joueurs");
+            int nbJoueurs = 3;
             Jeux LeJeux = new Jeux(nbJoueurs);
 
             //Demande le nom de chaque joueur
-            for (int i = 1; i <= nbJoueurs; i++)
-            {
-                Console.WriteLine("Nom et Prenom du joueur {0} svp: ", i );
-                String [] NomComplet = Console.ReadLine().Split(null); //Assume que l'entrée se fait par un espace entre les deux.
-                LeJeux.AjoutJoueur(new Joueur(NomComplet[0], NomComplet[1]));
-                
-            }
+            LeJeux.AjoutJoueur(new Joueur("Patrick", "Duhaime"));
+            LeJeux.AjoutJoueur(new Joueur("Francis", "Picard"));
+            LeJeux.AjoutJoueur(new Joueur("Martin", "Couture"));
+            System.Threading.Thread.Sleep(2000);
             LeJeux.DistributCartes();
             foreach (Joueur LeJoueur in LeJeux.GetListdesJoueurs)
             {
                 Console.WriteLine("Joueur: {0} {1}", LeJoueur.PrenomJoueur, LeJoueur.NomJoueur);
                 LeJoueur.MainJoueur.ListMain();
+                System.Threading.Thread.Sleep(2000);
             }
             Console.ReadKey(); //Permet d'arreter la console.
 

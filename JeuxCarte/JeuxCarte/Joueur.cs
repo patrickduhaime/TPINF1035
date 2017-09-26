@@ -11,7 +11,7 @@ namespace JeuxCarte
         private Main Main;
 
         //Constructeur
-        public Joueur(string Nom, string Prenom)
+        public Joueur(string Prenom, string Nom)
         {
             this.Nom = Nom;
             this.Prenom = Prenom;
