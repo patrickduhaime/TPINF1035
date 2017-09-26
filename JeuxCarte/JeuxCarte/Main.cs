@@ -51,9 +51,11 @@ namespace JeuxCarte
 
         public void ListMain()
         {
-          foreach ( Carte carte in this.listeCartes)
+            int i = 0;
+          foreach ( Carte carte in listeCartes)
             {
-                Console.WriteLine("Carte: {0} {1}", carte.Valeur, carte.Sorte);
+                Console.WriteLine("Carte" + i + " {0} {1}", carte.Valeur, carte.Sorte);
+                i++;
             }
         }
 

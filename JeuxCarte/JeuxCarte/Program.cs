@@ -25,7 +25,13 @@ namespace JeuxCarte
                 
             }
             LeJeux.DistributCartes();
+            foreach (Joueur LeJoueur in LeJeux.GetListdesJoueurs)
+            {
+                Console.WriteLine("Joueur: {0} {1}", LeJoueur.PrenomJoueur, LeJoueur.NomJoueur);
+                LeJoueur.MainJoueur.ListMain();
+            }
             Console.ReadKey(); //Permet d'arreter la console.
+
 
             //Affiche l'état du jeux
             Console.WriteLine("");
