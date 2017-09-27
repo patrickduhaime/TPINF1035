@@ -147,6 +147,7 @@ namespace JeuxCarte
         public void piocher()
         {
             Console.WriteLine("joueur pioche !!!");
+            AfficherCartePileDepot(GetCarteDepot);
         }
 
         public int VerifieCarte(int i, int j)
