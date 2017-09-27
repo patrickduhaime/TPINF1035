@@ -123,6 +123,7 @@ namespace JeuxCarte
             if (i >= GetNombreJoueurs)
                 i = 0;
             Console.WriteLine("Joueur: " + ListedeJoueurs[i].NomJoueur);
+            AfficherCartePileDepot(GetCarteDepot);
             ListedeJoueurs[i].MainJoueur.ListMain();
 
            int jouerOuPiocher = VerifieCarte(i, PileDepot.Count - 1);
@@ -146,8 +147,7 @@ namespace JeuxCarte
 
         public void piocher()
         {
-            Console.WriteLine("joueur pioche !!!");
-            AfficherCartePileDepot(GetCarteDepot);
+            Console.WriteLine("Le joueur pioche !!!\n");
         }
 
         public int VerifieCarte(int i, int j)

@@ -68,11 +68,11 @@ namespace JeuxCarte
         public int rechercherCarte(Carte carte)
         {
             int index = 99;
-
-            for(int i = 0; i < listeCartes.Count - 1; i++)
+            int i = 0;
+            foreach(Carte card in listeCartes)
             {
-                if (carte.Sorte.Equals(listeCartes[i].Sorte) || carte.Valeur.Equals(listeCartes[i].Valeur))
-                    index = i;
+                if (carte.Sorte.Equals(card.Sorte) || carte.Valeur.Equals(card.Valeur))
+                    index = i++;
             }
 
                 return index;
