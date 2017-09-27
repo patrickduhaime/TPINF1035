@@ -23,6 +23,9 @@ namespace JeuxCarte
             LeJeux.AjoutJoueur(new Joueur("Martin", "Couture"));
             System.Threading.Thread.Sleep(2000);
             LeJeux.DistributCartes();
+            LeJeux.PremierJoueur();
+            LeJeux.AfficherCartePileDepot(LeJeux.GetCarteDepot);
+
             foreach (Joueur LeJoueur in LeJeux.GetListdesJoueurs)
             {
                 Console.WriteLine("Joueur: {0} {1}", LeJoueur.PrenomJoueur, LeJoueur.NomJoueur);

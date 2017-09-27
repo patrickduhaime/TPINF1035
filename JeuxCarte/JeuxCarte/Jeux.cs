@@ -8,7 +8,7 @@ namespace JeuxCarte
     {
         //Déclartation des variables privées.
         private List<Carte> JeuxdeCartes;
-        private List<Carte> PileDepot;
+        protected List<Carte> PileDepot;
         private List<Carte> Pioche;
         private List<Joueur> ListedeJoueurs;
         private bool PiocheVide = false;
@@ -42,6 +42,11 @@ namespace JeuxCarte
         public int GetNombreCartePile
         {
             get { return PileDepot.Count; }
+        }
+
+        public Carte GetCarteDepot
+        {
+            get { return PileDepot[PileDepot.Count - 1]; }
         }
 
         public bool GetEtatPiocheVide
@@ -80,8 +85,6 @@ namespace JeuxCarte
                     }
                 }
             }
-            PremierJoueur();
-            AfficherCartePileDepot(PileDepot[PileDepot.Count - 1]);
         }
 
         public void AjoutCartePileDepot(Carte carte)
@@ -119,6 +122,8 @@ namespace JeuxCarte
             i++;
             if (i >= GetNombreJoueurs)
                 i = 0;
+            Console.WriteLine("Joueur: " + ListedeJoueurs[i].NomJoueur);
+            ListedeJoueurs[i].MainJoueur.ListMain();
 
            int jouerOuPiocher = VerifieCarte(i, PileDepot.Count - 1);
             if (jouerOuPiocher == 99)
@@ -128,12 +133,20 @@ namespace JeuxCarte
                 AjoutCartePileDepot(ListedeJoueurs[i].MainJoueur.IndexDeCarte(jouerOuPiocher));
                 ListedeJoueurs[i].MainJoueur.EnleveCarte(jouerOuPiocher);
             }
-          //JoueurSuivant(i);
+
+            if (ListedeJoueurs[i].MainJoueur.NbCartes == 0)
+                Console.WriteLine("joueur" + i + "gagne !!!");
+            else
+            {
+                System.Threading.Thread.Sleep(2000);
+                JoueurSuivant(i);
+            }
+            
         }
 
         public void piocher()
         {
-
+            Console.WriteLine("joueur pioche !!!");
         }
 
         public int VerifieCarte(int i, int j)
