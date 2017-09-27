@@ -111,8 +111,39 @@ namespace JeuxCarte
             int indexCarte = rand.Next(0, 7);
             AjoutCartePileDepot(ListedeJoueurs[index].MainJoueur.IndexDeCarte(indexCarte));
             ListedeJoueurs[index].MainJoueur.EnleveCarte(indexCarte);
+            JoueurSuivant(index);
         }
 
+        public void JoueurSuivant(int i)
+        {
+            i++;
+            if (i >= GetNombreJoueurs)
+                i = 0;
+
+           int jouerOuPiocher = VerifieCarte(i, PileDepot.Count - 1);
+            if (jouerOuPiocher == 99)
+                piocher();
+            else
+            {
+                AjoutCartePileDepot(ListedeJoueurs[i].MainJoueur.IndexDeCarte(jouerOuPiocher));
+                ListedeJoueurs[i].MainJoueur.EnleveCarte(jouerOuPiocher);
+            }
+          //JoueurSuivant(i);
+        }
+
+        public void piocher()
+        {
+
+        }
+
+        public int VerifieCarte(int i, int j)
+        {
+            int index = 0;
+
+            index = ListedeJoueurs[i].MainJoueur.rechercherCarte(PileDepot[j]);
+
+            return index;
+        }
 
         private void CreationDuJeuxdeCartes()
         {

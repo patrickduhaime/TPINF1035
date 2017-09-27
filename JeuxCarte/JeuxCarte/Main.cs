@@ -59,10 +59,23 @@ namespace JeuxCarte
             int i = 0;
           foreach ( Carte carte in listeCartes)
             {
-                Console.WriteLine("Carte" + i + " {0} {1} {2}", listeCartes[i], carte.Valeur, carte.Sorte);
+                Console.WriteLine("Carte" + i + " {0} ", listeCartes[i]);
                 i++;
             }
             Console.WriteLine("");
+        }
+
+        public int rechercherCarte(Carte carte)
+        {
+            int index = 99;
+
+            for(int i = 0; i < listeCartes.Count - 1; i++)
+            {
+                if (carte.Sorte.Equals(listeCartes[i].Sorte) || carte.Valeur.Equals(listeCartes[i].Valeur))
+                    index = i;
+            }
+
+                return index;
         }
 
         public override string ToString()
