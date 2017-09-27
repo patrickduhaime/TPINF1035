@@ -8,3 +8,5 @@ Fait avec Visual Studio 2017
 [Tuto rapide GITHUB](https://developer.mozilla.org/fr/Apprendre/Utiliser_les_pages_GitHub)
 
 [Aide rapide pour écrire le fichier MD](https://fr.wikipedia.org/wiki/Markdown)
+
+[Wiki GITHUB](https://fr.wikibooks.org/wiki/Git/Synchroniser_le_d%C3%A9p%C3%B4t_local_avec_le_d%C3%A9p%C3%B4t_distant)
