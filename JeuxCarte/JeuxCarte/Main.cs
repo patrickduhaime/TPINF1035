@@ -37,7 +37,7 @@ namespace JeuxCarte
         public bool EnleveCarte(int index)
         {
             bool OpCompletee = true; 
-            if (index < listeCartes.Count -1)
+            if (index < listeCartes.Count -1 || index == 0)
             {
                 listeCartes.RemoveAt(index);
             }

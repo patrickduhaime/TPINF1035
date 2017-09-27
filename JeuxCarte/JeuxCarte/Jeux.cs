@@ -122,6 +122,7 @@ namespace JeuxCarte
             i++;
             if (i >= GetNombreJoueurs)
                 i = 0;
+
             Console.WriteLine("Joueur: " + ListedeJoueurs[i].NomJoueur);
             AfficherCartePileDepot(GetCarteDepot);
             ListedeJoueurs[i].MainJoueur.ListMain();
@@ -135,14 +136,15 @@ namespace JeuxCarte
                 ListedeJoueurs[i].MainJoueur.EnleveCarte(jouerOuPiocher);
             }
 
-            if (ListedeJoueurs[i].MainJoueur.NbCartes == 0)
+            if (ListedeJoueurs[i].MainJoueur.NbCartes.Equals(0))
+            {
                 Console.WriteLine("joueur" + i + "gagne !!!");
+            }
             else
             {
-                System.Threading.Thread.Sleep(2000);
+                System.Threading.Thread.Sleep(500);
                 JoueurSuivant(i);
             }
-            
         }
 
         public void piocher()
