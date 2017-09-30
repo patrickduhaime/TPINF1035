@@ -152,6 +152,8 @@ namespace JeuxCarte
         public void Piocher(Joueur joueur)
         {
             Console.WriteLine("Le joueur pioche !!!\n");
+            if (Pioche.Count == 0)
+                Console.WriteLine("Stack empty !!!");
             joueur.MainJoueur.AjoutCarte(Pioche.Pop());
 
         }
