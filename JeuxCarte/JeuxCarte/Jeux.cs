@@ -9,7 +9,7 @@ namespace JeuxCarte
         //Déclartation des variables privées.
         private List<Carte> JeuxdeCartes;
         protected List<Carte> PileDepot;
-        private List<Carte> Pioche;
+        private Stack<Carte> Pioche;
         private List<Joueur> ListedeJoueurs;
         private bool PiocheVide = false;
         private int NbJoueurs = 0;
@@ -25,8 +25,7 @@ namespace JeuxCarte
             MelangeListe(JeuxdeCartes); //Mélange le jeux après création
             PileDepot = new List<Carte>();
             ListedeJoueurs = new List<Joueur>();
-            Pioche = new List<Carte>();
-            OrdredesJoueurs = new List<Joueur>();
+            Pioche = new Stack<Carte>();
         }
 
         //Getter et Setter
@@ -85,6 +84,9 @@ namespace JeuxCarte
                     }
                 }
             }
+
+            while (k <= JeuxdeCartes.Count - 1)
+                Pioche.Push(JeuxdeCartes[k++]);
         }
 
         public void AjoutCartePileDepot(Carte carte)
@@ -129,7 +131,7 @@ namespace JeuxCarte
 
            int jouerOuPiocher = VerifieCarte(i, PileDepot.Count - 1);
             if (jouerOuPiocher == 99)
-                piocher();
+                Piocher(ListedeJoueurs[i]);
             else
             {
                 AjoutCartePileDepot(ListedeJoueurs[i].MainJoueur.IndexDeCarte(jouerOuPiocher));
@@ -142,14 +144,16 @@ namespace JeuxCarte
             }
             else
             {
-                System.Threading.Thread.Sleep(500);
+                System.Threading.Thread.Sleep(2000);
                 JoueurSuivant(i);
             }
         }
 
-        public void piocher()
+        public void Piocher(Joueur joueur)
         {
             Console.WriteLine("Le joueur pioche !!!\n");
+            joueur.MainJoueur.AjoutCarte(Pioche.Pop());
+
         }
 
         public int VerifieCarte(int i, int j)
@@ -171,11 +175,6 @@ namespace JeuxCarte
                     JeuxdeCartes.Add(UneCarte);
                 }
             }
-        }
-
-        public void MelangeJoueurs()
-        {
-            MelangeListe(this.ListedeJoueurs);
         }
 
         private void MelangeListe<T>(List<T> LaListe)

@@ -77,8 +77,7 @@ namespace JeuxCarte
                 }
                 i++;
             }
-
-                return index;
+            return index;
         }
 
         public override string ToString()
