@@ -51,8 +51,7 @@ namespace JeuxCarte
             {
                 Console.WriteLine("Joueur: {0} {1}", LeJoueur.PrenomJoueur, LeJoueur.NomJoueur); 
             }
-            Console.WriteLine("Melange de l'ordre des joueurs, voici le nouvel ordre");
-            LeJeux.MelangeJoueurs();
+
             foreach (Joueur LeJoueur in LeJeux.GetListdesJoueurs)
             {
                 Console.WriteLine("Joueur: {0} {1}", LeJoueur.PrenomJoueur, LeJoueur.NomJoueur);
