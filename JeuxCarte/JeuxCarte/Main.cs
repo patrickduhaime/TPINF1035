@@ -72,7 +72,10 @@ namespace JeuxCarte
             foreach(Carte card in listeCartes)
             {
                 if (carte.Sorte.Equals(card.Sorte) || carte.Valeur.Equals(card.Valeur))
-                    index = i++;
+                {
+                    return i;
+                }
+                i++;
             }
 
                 return index;
