@@ -179,7 +179,7 @@ namespace JeuxCarte
             foreach(Carte carte in PileDepot)
             {
                 Pioche.Push(carte);
-                PileDepot.Remove(carteDepot);
+                PileDepot.Remove(carte);
             }
 
             PileDepot.Add(carteDepot);
