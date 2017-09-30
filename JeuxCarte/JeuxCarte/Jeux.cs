@@ -13,7 +13,6 @@ namespace JeuxCarte
         private List<Joueur> ListedeJoueurs;
         private bool PiocheVide = false;
         private int NbJoueurs = 0;
-        private List<Joueur> OrdredesJoueurs;
 
         //Constructeur
         public Jeux(int NbJoueur)
@@ -120,7 +119,7 @@ namespace JeuxCarte
             JoueurSuivant(index);
         }
 
-        public void JoueurSuivant(int i)
+        private void JoueurSuivant(int i)
         {
             i++;
             if (i >= GetNombreJoueurs)
@@ -150,27 +149,43 @@ namespace JeuxCarte
             }
         }
 
-        public void Piocher(Joueur joueur)
+        private void Piocher(Joueur joueur)
         {
             Console.WriteLine("Le joueur pioche !!!\n");
             if (Pioche.Count == 0)
             {
-                Console.WriteLine("Stack empty !!!");
-                Console.ReadKey(); //Permet d'arreter la console.
+                RemplirPioche();
             }
-                
-
             joueur.MainJoueur.AjoutCarte(Pioche.Pop());
-
         }
 
-        public int VerifieCarte(int i, int j)
+
+
+        private int VerifieCarte(int i, int j)
         {
             int index = 0;
 
             index = ListedeJoueurs[i].MainJoueur.rechercherCarte(PileDepot[j]);
 
             return index;
+        }
+
+        private void RemplirPioche()
+        {
+            Carte carteDepot = PileDepot[PileDepot.Count - 1];
+            PileDepot.Remove(carteDepot);
+            MelangeListe(PileDepot);
+
+            foreach(Carte carte in PileDepot)
+            {
+                Pioche.Push(carte);
+                PileDepot.Remove(carteDepot);
+            }
+
+            PileDepot.Add(carteDepot);
+
+            Console.WriteLine("Stack empty !!!");
+            Console.ReadKey(); //Permet d'arreter la console.
         }
 
         private void CreationDuJeuxdeCartes()
