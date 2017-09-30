@@ -72,6 +72,7 @@ namespace JeuxCarte
         public void DistributCartes()
         {
             int k = 0;
+            int l = 0;
 
             while (k < 8 * GetNombreJoueurs)
             {
@@ -85,8 +86,8 @@ namespace JeuxCarte
                 }
             }
 
-            while (k <= JeuxdeCartes.Count - 1)
-                Pioche.Push(JeuxdeCartes[k++]);
+            while (l  <= JeuxdeCartes.Count - 1)
+                    Pioche.Push(JeuxdeCartes[l++]);
         }
 
         public void AjoutCartePileDepot(Carte carte)
@@ -153,7 +154,12 @@ namespace JeuxCarte
         {
             Console.WriteLine("Le joueur pioche !!!\n");
             if (Pioche.Count == 0)
+            {
                 Console.WriteLine("Stack empty !!!");
+                Console.ReadKey(); //Permet d'arreter la console.
+            }
+                
+
             joueur.MainJoueur.AjoutCarte(Pioche.Pop());
 
         }
