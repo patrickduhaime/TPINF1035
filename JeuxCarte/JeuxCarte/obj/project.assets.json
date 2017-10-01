@@ -7045,9 +7045,9 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "D:\\GIT\\TPINF1035\\JeuxCarte\\JeuxCarte\\JeuxCarte.csproj",
-      "projectName": "JeuxCarte",
-      "projectPath": "D:\\GIT\\TPINF1035\\JeuxCarte\\JeuxCarte\\JeuxCarte.csproj",
+      "projectUniqueName": "D:\\GIT\\TPINF1035\\JeuxCarte\\JeuxCarte\\JeuCarte.csproj",
+      "projectName": "JeuCarte",
+      "projectPath": "D:\\GIT\\TPINF1035\\JeuxCarte\\JeuxCarte\\JeuCarte.csproj",
       "packagesPath": "C:\\Users\\mcouture\\.nuget\\packages\\",
       "outputPath": "D:\\GIT\\TPINF1035\\JeuxCarte\\JeuxCarte\\obj\\",
       "projectStyle": "PackageReference",
