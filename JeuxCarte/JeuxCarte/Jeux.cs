@@ -172,20 +172,22 @@ namespace JeuxCarte
 
         private void RemplirPioche()
         {
+
             Carte carteDepot = PileDepot[PileDepot.Count - 1];
             PileDepot.Remove(carteDepot);
             MelangeListe(PileDepot);
 
-            foreach(Carte carte in PileDepot)
+            foreach (Carte carte in PileDepot)
             {
                 Pioche.Push(carte);
-                PileDepot.Remove(carte);
             }
 
+            PileDepot.Clear();
             PileDepot.Add(carteDepot);
 
-            Console.WriteLine("Stack empty !!!");
+            Console.WriteLine("Pile de pioche rempli !!!");
             Console.ReadKey(); //Permet d'arreter la console.
+
         }
 
         private void CreationDuJeuxdeCartes()
