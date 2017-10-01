@@ -210,5 +210,38 @@ namespace JeuxCarte
                 LaListe[n] = value;
             }
         }
+        //Structure de carte
+        public struct SCarte
+        {
+            //Énumération
+            public enum EnumSorte { Coeur, Pique, Treffle, Carreau }
+            public enum EnumValeur { As, deux, trois, quatre, cinq, six, sept, huit, neuf, dix, Valet, Dame, Roi }
+
+            private EnumSorte sorte;
+            private EnumValeur valeur;
+
+            //Getter et setter de la carte
+            public EnumSorte Sorte
+            {
+                get { return sorte; }
+                set { sorte = value; }
+            }
+
+            public EnumValeur Valeur
+            {
+                get { return valeur; }
+                set { valeur = value; }
+            }
+
+
+            //Méthodes
+            public override string ToString()
+            {
+                return valeur + " de " + sorte;
+            }
+
+
+        }
+
     }
 }

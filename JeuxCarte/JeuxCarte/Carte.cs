@@ -7,8 +7,8 @@ namespace JeuxCarte
     class Carte
     {
         //Définition des énumérations
-        public enum EnumSorte { Coeur, Pique, Treffle, Carreau }
-        public enum EnumValeur { As, deux, trois, quatre, cinq, six, sept, huit, neuf, dix, Valet, Dame, Roi}
+        /*public enum EnumSorte { Coeur, Pique, Treffle, Carreau }
+        //public enum EnumValeur { As, deux, trois, quatre, cinq, six, sept, huit, neuf, dix, Valet, Dame, Roi}
         
         //Déclaration des variables encapsulées.
         private EnumSorte sorte;
@@ -37,6 +37,6 @@ namespace JeuxCarte
         public override string ToString()
         {
             return valeur + " de " + sorte;
-        }
+        } */
     }
 }
