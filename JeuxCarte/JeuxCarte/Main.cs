@@ -65,7 +65,7 @@ namespace JeuxCarte
             Console.WriteLine("");
         }
 
-        public int rechercherCarte(Carte carte)
+        public int RechercherCarte(Carte carte)
         {
             int index = 99;
             int i = 0;
