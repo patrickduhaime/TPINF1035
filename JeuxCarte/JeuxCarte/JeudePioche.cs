@@ -4,15 +4,13 @@ using System.Text;
 
 namespace JeuCarte
 {
-    class JeudePioche
+    class JeudePioche:LesJeuxdeCartes
     {
         //Déclartation des variables privées.
-        private List<SCarte> JeuxdeCartes;
-        protected List<SCarte> PileDepot;
-        private Stack<SCarte> Pioche;
-        private List<Joueur> ListedeJoueurs;
-        private bool PiocheVide = false;
-        private int NbJoueurs = 0;
+         private List<SCarte> PileDepot;
+         private Stack<SCarte> Pioche;
+         private bool PiocheVide = false;
+ 
 
         //Constructeur
         public JeudePioche(int NbJoueur)
@@ -28,10 +26,7 @@ namespace JeuCarte
         }
 
         //Getter et Setter
-        public int GetNombreJoueurs
-        {
-            get { return this.NbJoueurs; }
-        }
+
         public int GetNombreCartePioche
         {
             get { return JeuxdeCartes.Count; }
@@ -59,11 +54,6 @@ namespace JeuCarte
                     PiocheVide = false;
                 }
             return PiocheVide; }
-        }
-
-        public List<Joueur> GetListdesJoueurs
-        {
-            get { return ListedeJoueurs; }
         }
 
         //Méthodes
@@ -99,12 +89,7 @@ namespace JeuCarte
             Console.WriteLine("Carte de la pile de depot:  {0} {1}", carte.Valeur, carte.Sorte);
         }
 
-        public void AjoutJoueur(Joueur LeJoueur)
-        {
-            ListedeJoueurs.Add(LeJoueur);
-        }
-
-
+   
         /*
          *Methode pour choisir le premier joueur aleatoirement et demarre la parti
          *en deposant une premiere carte sur la pile de depot
@@ -183,71 +168,5 @@ namespace JeuCarte
 
             Console.WriteLine("Pile de pioche rempli !!!\n");
         }
-
-        private void CreationDuJeuxdeCartes()
-        {
-            foreach (SCarte.EnumSorte Sorte in Enum.GetValues(typeof(SCarte.EnumSorte)))
-            {
-                foreach (SCarte.EnumValeur Valeur in Enum.GetValues(typeof(SCarte.EnumValeur)))
-                {
-                    SCarte UneCarte = new SCarte(Sorte, Valeur);
-                    JeuxdeCartes.Add(UneCarte);
-                }
-            }
-        }
-
-        private void MelangeListe<T>(List<T> LaListe)
-        {
-            Random rnd = new Random();
-            int n = LaListe.Count;
-            while (n > 1)
-            {
-                int k = (rnd.Next(0, n) % n);
-                n--;
-                T value = LaListe[k];
-                LaListe[k] = LaListe[n];
-                LaListe[n] = value;
-            }
-        }
-        //Structure de carte
-        public struct SCarte
-        {
-            //Constructeur
-            public SCarte(EnumSorte sorte, EnumValeur valeur)
-            {
-                this.sorte = sorte;
-                this.valeur = valeur;
-            }
-
-            //Énumération
-            public enum EnumSorte { Coeur, Pique, Treffle, Carreau }
-            public enum EnumValeur { As, deux, trois, quatre, cinq, six, sept, huit, neuf, dix, Valet, Dame, Roi }
-
-            private EnumSorte sorte;
-            private EnumValeur valeur;
-
-            //Getter et setter de la carte
-            public EnumSorte Sorte
-            {
-                get { return sorte; }
-                set { sorte = value; }
-            }
-
-            public EnumValeur Valeur
-            {
-                get { return valeur; }
-                set { valeur = value; }
-            }
-
-
-            //Méthodes
-            public override string ToString()
-            {
-                return valeur + " de " + sorte;
-            }
-
-
-        }
-
-    }
+     }
 }
