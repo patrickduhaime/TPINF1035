@@ -4,7 +4,7 @@ using System.Text;
 
 namespace JeuCarte
 {
-    class Jeux
+    class JeudePioche
     {
         //Déclartation des variables privées.
         private List<SCarte> JeuxdeCartes;
@@ -15,7 +15,7 @@ namespace JeuCarte
         private int NbJoueurs = 0;
 
         //Constructeur
-        public Jeux(int NbJoueur)
+        public JeudePioche(int NbJoueur)
         {
             this.NbJoueurs = NbJoueur;
             //Création des 52 cartes

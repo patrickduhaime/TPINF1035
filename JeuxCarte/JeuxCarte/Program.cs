@@ -42,7 +42,7 @@ namespace JeuCarte
                             nombreJoueur = Console.ReadLine();
                             nbJoueurs = (int.Parse(nombreJoueur));
                         }
-                        Jeux LeJeux = new Jeux(nbJoueurs);
+                        JeudePioche LeJeux = new JeudePioche(nbJoueurs);
 
                         switch (nombreJoueur)
                         {
