@@ -148,8 +148,7 @@ namespace JeuxCarte
                 JoueurSuivant(i);
             }
         }
-
-        private void Piocher(Joueur joueur)
+                private void Piocher(Joueur joueur)
         {
             Console.WriteLine("Le joueur pioche !!!\n");
             if (Pioche.Count == 0)
