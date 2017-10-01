@@ -7,9 +7,9 @@ namespace JeuxCarte
     class Jeux
     {
         //Déclartation des variables privées.
-        private List<Carte> JeuxdeCartes;
-        protected List<Carte> PileDepot;
-        private Stack<Carte> Pioche;
+        private List<SCarte> JeuxdeCartes;
+        protected List<SCarte> PileDepot;
+        private Stack<SCarte> Pioche;
         private List<Joueur> ListedeJoueurs;
         private bool PiocheVide = false;
         private int NbJoueurs = 0;
@@ -19,12 +19,12 @@ namespace JeuxCarte
         {
             this.NbJoueurs = NbJoueur;
             //Création des 52 cartes
-            JeuxdeCartes = new List<Carte>();
+            JeuxdeCartes = new List<SCarte>();
             CreationDuJeuxdeCartes();
             MelangeListe(JeuxdeCartes); //Mélange le jeux après création
-            PileDepot = new List<Carte>();
+            PileDepot = new List<SCarte>();
             ListedeJoueurs = new List<Joueur>();
-            Pioche = new Stack<Carte>();
+            Pioche = new Stack<SCarte>();
         }
 
         //Getter et Setter
@@ -42,7 +42,7 @@ namespace JeuxCarte
             get { return PileDepot.Count; }
         }
 
-        public Carte GetCarteDepot
+        public SCarte GetCarteDepot
         {
             get { return PileDepot[PileDepot.Count - 1]; }
         }
@@ -89,12 +89,12 @@ namespace JeuxCarte
                     Pioche.Push(JeuxdeCartes[l++]);
         }
 
-        public void AjoutCartePileDepot(Carte carte)
+        public void AjoutCartePileDepot(SCarte carte)
         {
             PileDepot.Add(carte);
         }
 
-        public void AfficherCartePileDepot(Carte carte)
+        public void AfficherCartePileDepot(SCarte carte)
         {
             Console.WriteLine("Carte de la pile de depot:  {0} {1}", carte.Valeur, carte.Sorte);
         }
@@ -170,11 +170,11 @@ namespace JeuxCarte
 
         private void RemplirPioche()
         {
-            Carte carteDepot = PileDepot[PileDepot.Count - 1];
+            SCarte carteDepot = PileDepot[PileDepot.Count - 1];
             PileDepot.Remove(carteDepot);
             MelangeListe(PileDepot);
 
-            foreach (Carte carte in PileDepot)
+            foreach (SCarte carte in PileDepot)
             {
                 Pioche.Push(carte);
             }
@@ -187,11 +187,11 @@ namespace JeuxCarte
 
         private void CreationDuJeuxdeCartes()
         {
-            foreach (Carte.EnumSorte Sorte in Enum.GetValues(typeof(Carte.EnumSorte)))
+            foreach (SCarte.EnumSorte Sorte in Enum.GetValues(typeof(SCarte.EnumSorte)))
             {
-                foreach (Carte.EnumValeur Valeur in Enum.GetValues(typeof(Carte.EnumValeur)))
+                foreach (SCarte.EnumValeur Valeur in Enum.GetValues(typeof(SCarte.EnumValeur)))
                 {
-                    Carte UneCarte = new Carte(Sorte, Valeur);
+                    SCarte UneCarte = new SCarte(Sorte, Valeur);
                     JeuxdeCartes.Add(UneCarte);
                 }
             }
@@ -213,6 +213,13 @@ namespace JeuxCarte
         //Structure de carte
         public struct SCarte
         {
+            //Constructeur
+            public SCarte(EnumSorte sorte, EnumValeur valeur)
+            {
+                this.sorte = sorte;
+                this.valeur = valeur;
+            }
+
             //Énumération
             public enum EnumSorte { Coeur, Pique, Treffle, Carreau }
             public enum EnumValeur { As, deux, trois, quatre, cinq, six, sept, huit, neuf, dix, Valet, Dame, Roi }

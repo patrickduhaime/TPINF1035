@@ -9,12 +9,12 @@ namespace JeuxCarte
     class Main
     {
         //Déclaration des variables encapsulées.
-        private List<Carte> listeCartes;
+        private List<Jeux.SCarte> listeCartes;
 
         //Constructeur de la classe Main
         public Main()
         {
-            listeCartes = new List<Carte>();
+            listeCartes = new List<Jeux.SCarte>();
         }
 
       
@@ -29,7 +29,7 @@ namespace JeuxCarte
 
         //Méthodes
 
-        public void AjoutCarte(Carte carte)
+        public void AjoutCarte(Jeux.SCarte carte)
         {
             listeCartes.Add(carte);
         }
@@ -49,7 +49,7 @@ namespace JeuxCarte
             return OpCompletee;
         }
 
-        public Carte IndexDeCarte(int index)
+        public Jeux.SCarte IndexDeCarte(int index)
         {
             return listeCartes[index];
         }
@@ -57,7 +57,7 @@ namespace JeuxCarte
         public void ListMain()
         {
             int i = 0;
-          foreach ( Carte carte in listeCartes)
+          foreach ( Jeux.SCarte carte in listeCartes)
             {
                 Console.WriteLine("Carte" + i + " {0} ", listeCartes[i]);
                 i++;
@@ -65,11 +65,11 @@ namespace JeuxCarte
             Console.WriteLine("");
         }
 
-        public int RechercherCarte(Carte carte)
+        public int RechercherCarte(Jeux.SCarte carte)
         {
             int index = 99;
             int i = 0;
-            foreach(Carte card in listeCartes)
+            foreach(Jeux.SCarte card in listeCartes)
             {
                 if (carte.Sorte.Equals(card.Sorte) || carte.Valeur.Equals(card.Valeur))
                 {
