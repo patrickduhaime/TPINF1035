@@ -106,7 +106,7 @@ namespace JeuxCarte
 
 
         /*
-         *Methode pour choisir le premier joueur aleatoirement et demarrer la parti
+         *Methode pour choisir le premier joueur aleatoirement et demarre la parti
          *en deposant une premiere carte sur la pile de depot
         */
         public void PremierJoueur()
