@@ -13,7 +13,6 @@ namespace JeuxCarte
         private List<Joueur> ListedeJoueurs;
         private bool PiocheVide = false;
         private int NbJoueurs = 0;
-        private List<Joueur> OrdredesJoueurs;
 
         //Constructeur
         public Jeux(int NbJoueur)
@@ -72,6 +71,7 @@ namespace JeuxCarte
         public void DistributCartes()
         {
             int k = 0;
+            int l = 0;
 
             while (k < 8 * GetNombreJoueurs)
             {
@@ -85,8 +85,8 @@ namespace JeuxCarte
                 }
             }
 
-            while (k <= JeuxdeCartes.Count - 1)
-                Pioche.Push(JeuxdeCartes[k++]);
+            while (l  <= JeuxdeCartes.Count - 1)
+                    Pioche.Push(JeuxdeCartes[l++]);
         }
 
         public void AjoutCartePileDepot(Carte carte)
@@ -106,7 +106,7 @@ namespace JeuxCarte
 
 
         /*
-         *Methode pour choisir le premier joueur aleatoirement et demarre la parti
+         *Methode pour choisir le premier joueur aleatoirement et demarrer la parti
          *en deposant une premiere carte sur la pile de depot
         */
         public void PremierJoueur()
@@ -119,7 +119,7 @@ namespace JeuxCarte
             JoueurSuivant(index);
         }
 
-        public void JoueurSuivant(int i)
+        private void JoueurSuivant(int i)
         {
             i++;
             if (i >= GetNombreJoueurs)
@@ -149,20 +149,40 @@ namespace JeuxCarte
             }
         }
 
-        public void Piocher(Joueur joueur)
+        private void Piocher(Joueur joueur)
         {
             Console.WriteLine("Le joueur pioche !!!\n");
+            if (Pioche.Count == 0)
+            {
+                RemplirPioche();
+            }
             joueur.MainJoueur.AjoutCarte(Pioche.Pop());
-
         }
 
-        public int VerifieCarte(int i, int j)
-        {
-            int index = 0;
 
-            index = ListedeJoueurs[i].MainJoueur.rechercherCarte(PileDepot[j]);
+
+        private int VerifieCarte(int i, int j)
+        {
+           int index = ListedeJoueurs[i].MainJoueur.RechercherCarte(PileDepot[j]);
 
             return index;
+        }
+
+        private void RemplirPioche()
+        {
+            Carte carteDepot = PileDepot[PileDepot.Count - 1];
+            PileDepot.Remove(carteDepot);
+            MelangeListe(PileDepot);
+
+            foreach (Carte carte in PileDepot)
+            {
+                Pioche.Push(carte);
+            }
+
+            PileDepot.Clear();
+            PileDepot.Add(carteDepot);
+
+            Console.WriteLine("Pile de pioche rempli !!!\n");
         }
 
         private void CreationDuJeuxdeCartes()
