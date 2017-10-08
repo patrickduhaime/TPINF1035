@@ -7045,11 +7045,11 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\Users\\Patrick\\Documents\\GitLocalDepot\\TPINF1035\\JeuxCarte\\JeuxCarte\\JeuxCarte.csproj",
-      "projectName": "JeuxCarte",
-      "projectPath": "C:\\Users\\Patrick\\Documents\\GitLocalDepot\\TPINF1035\\JeuxCarte\\JeuxCarte\\JeuxCarte.csproj",
+      "projectUniqueName": "C:\\Users\\Patrick\\Documents\\gitKraken\\TPINF1035\\JeuxCarte\\JeuxCarte\\JeuCarte.csproj",
+      "projectName": "JeuCarte",
+      "projectPath": "C:\\Users\\Patrick\\Documents\\gitKraken\\TPINF1035\\JeuxCarte\\JeuxCarte\\JeuCarte.csproj",
       "packagesPath": "C:\\Users\\Patrick\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Patrick\\Documents\\GitLocalDepot\\TPINF1035\\JeuxCarte\\JeuxCarte\\obj\\",
+      "outputPath": "C:\\Users\\Patrick\\Documents\\gitKraken\\TPINF1035\\JeuxCarte\\JeuxCarte\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Patrick\\AppData\\Roaming\\NuGet\\NuGet.Config",

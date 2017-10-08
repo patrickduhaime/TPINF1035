@@ -56,7 +56,7 @@ namespace JeuCarte
             return PiocheVide; }
         }
 
-        //Méthodes
+        //Méthodes pour distribuer les cartes aleatoirement aux joueurs
 
         public void DistributCartes()
         {
@@ -75,25 +75,25 @@ namespace JeuCarte
                 }
             }
 
+            //Les cartes non distribuees sont ajoutees a la pile de pioche
             while (l  <= JeuxdeCartes.Count - 1)
                     Pioche.Push(JeuxdeCartes[l++]);
         }
 
+        //Methode pour ajouter une carte sur la pile de depot
         public void AjoutCartePileDepot(SCarte carte)
         {
             PileDepot.Add(carte);
         }
 
+        //Methode pour afficher la carte sur la pile de depot
         public void AfficherCartePileDepot(SCarte carte)
         {
             Console.WriteLine("Carte de la pile de depot:  {0} {1}", carte.Valeur, carte.Sorte);
         }
-
-   
-        /*
-         *Methode pour choisir le premier joueur aleatoirement et demarre la parti
-         *en deposant une premiere carte sur la pile de depot
-        */
+ 
+        //Methode pour choisir le premier joueur aleatoirement et demarrer la parti
+         //en deposant une premiere carte sur la pile de depot
         public void PremierJoueur()
         {
             Random rand = new Random();
@@ -104,6 +104,8 @@ namespace JeuCarte
             JoueurSuivant(index);
         }
 
+        //Methode recursive qui incremente le joueur courant et qui verifie si le il peux jouer une carte ou si il doit piocher
+        //La condition de sorti de la methode est que le joueur n'a plus de carte dans sa main.
         private void JoueurSuivant(int i)
         {
             i++;
@@ -114,7 +116,7 @@ namespace JeuCarte
             AfficherCartePileDepot(GetCarteDepot);
             ListedeJoueurs[i].MainJoueur.ListMain();
 
-           int jouerOuPiocher = VerifieCarte(i, PileDepot.Count - 1);
+           int jouerOuPiocher = ListedeJoueurs[i].MainJoueur.RechercherCarte(PileDepot[PileDepot.Count - 1]);
             if (jouerOuPiocher == 99)
                 Piocher(ListedeJoueurs[i]);
             else
@@ -133,7 +135,9 @@ namespace JeuCarte
                 JoueurSuivant(i);
             }
         }
-                private void Piocher(Joueur joueur)
+
+        //Methode pour ajouter une carte de la pile de pioche a la main du joueur passe en parametre a la methode
+        private void Piocher(Joueur joueur)
         {
             Console.WriteLine("Le joueur pioche !!!\n");
             if (Pioche.Count == 0)
@@ -143,15 +147,9 @@ namespace JeuCarte
             joueur.MainJoueur.AjoutCarte(Pioche.Pop());
         }
 
-
-
-        private int VerifieCarte(int i, int j)
-        {
-           int index = ListedeJoueurs[i].MainJoueur.RechercherCarte(PileDepot[j]);
-
-            return index;
-        }
-
+        //Methode pour remplir la pile de pioche avec les cartes de la pile de depot si la pile de pioche est vide.
+        //La carte courante de la pile de depot reste la seule carte de la pile, les autre cartes sont melange
+        //et ajouter a la pile de pioche
         private void RemplirPioche()
         {
             SCarte carteDepot = PileDepot[PileDepot.Count - 1];
