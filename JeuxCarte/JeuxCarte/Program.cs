@@ -11,25 +11,170 @@ namespace JeuxCarte
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("***Bienvenue au jeux de la pioche***");
-            //Le nombre de joueurs
-            Console.WriteLine("***  Partie test pour 3 Joueurs  ***\n");
-
-            int nbJoueurs = 3;
-            Jeux LeJeux = new Jeux(nbJoueurs);
-
-            //Demande le nom de chaque joueur
-            LeJeux.AjoutJoueur(new Joueur("Patrick", "Duhaime"));
-            LeJeux.AjoutJoueur(new Joueur("Francis", "Picard"));
-            LeJeux.AjoutJoueur(new Joueur("Martin", "Couture"));
-
-            int i = 1;
-            foreach (Joueur LeJoueur in LeJeux.GetListdesJoueurs)
+            while (true)
             {
-                Console.WriteLine("Joueur" + (i++) + ": {0} {1}", LeJoueur.PrenomJoueur, LeJoueur.NomJoueur);
-            }
+                Console.WriteLine("***Bienvenue au jeux de la pioche***");
+                Console.WriteLine("Pour débuter la partie, taper 1");
+                Console.WriteLine("Pour quitter, taper 0");
 
-            Console.WriteLine("");
+                String choix = Console.ReadLine();
+
+
+                switch (choix)
+                {
+                    case "0":
+                        Console.WriteLine("Au revoir !");
+                        Environment.Exit(0);
+                        break;
+
+                    case "1":
+
+                        int nbJoueurs = 0;
+                        String nombreJoueur;
+
+                        Console.WriteLine("Entrer le nombre de joueur a creer entre 2 et 4");
+                        nombreJoueur = Console.ReadLine();
+                        nbJoueurs = (int.Parse(nombreJoueur));
+
+                        while (nbJoueurs < 2 || nbJoueurs > 4)
+                        {
+                            Console.WriteLine("Entrer le nombre de joueur a creer entre 2 et 4");
+                            nombreJoueur = Console.ReadLine();
+                            nbJoueurs = (int.Parse(nombreJoueur));
+                        }
+                        Jeux LeJeux = new Jeux(nbJoueurs);
+
+                        switch (nombreJoueur)
+                        {
+                            case "2":
+                                Console.WriteLine("**************************************************");
+                                Console.WriteLine("******************Premier joueur******************");
+                                Console.WriteLine("**************************************************");
+                                Console.WriteLine("Entrer le nom:");
+                                String nJoueur1 = Console.ReadLine();
+                                Console.WriteLine("Entrer le prenom:");
+                                String pJoueur1 = Console.ReadLine();
+                                LeJeux.AjoutJoueur(new Joueur(nJoueur1, pJoueur1));
+                                Console.WriteLine("**************************************************");
+                                Console.WriteLine("******************Deuxième joueur*****************");
+                                Console.WriteLine("**************************************************");
+                                Console.WriteLine("Entrer le nom:");
+                                String nJoueur2 = Console.ReadLine();
+                                Console.WriteLine("Entrer le prenom:");
+                                String pJoueur2 = Console.ReadLine();
+                                LeJeux.AjoutJoueur(new Joueur(nJoueur2, pJoueur2));
+                                Console.WriteLine("**************************************************");
+                                Console.WriteLine("***************La partie va commencer*************");
+                                Console.WriteLine("**************************************************");
+
+                                System.Threading.Thread.Sleep(2000);
+                                Console.WriteLine("Les cartes sont distribues aux joueurs\n");
+                                LeJeux.DistributCartes();
+                                System.Threading.Thread.Sleep(2000);
+                                LeJeux.PremierJoueur();
+                                break;
+
+                            case "3":
+                                Console.WriteLine("**************************************************");
+                                Console.WriteLine("******************Premier joueur******************");
+                                Console.WriteLine("**************************************************");
+                                Console.WriteLine("Entrer le nom:");
+                                String nJoueur3 = Console.ReadLine();
+                                Console.WriteLine("Entrer le prenom:");
+                                String pJoueur3 = Console.ReadLine();
+                                LeJeux.AjoutJoueur(new Joueur(nJoueur3, pJoueur3));
+                                Console.WriteLine("**************************************************");
+                                Console.WriteLine("******************Deuxième joueur*****************");
+                                Console.WriteLine("**************************************************");
+                                Console.WriteLine("Entrer le nom:");
+                                String nJoueur4 = Console.ReadLine();
+                                Console.WriteLine("Entrer le prenom:");
+                                String pJoueur4 = Console.ReadLine();
+                                LeJeux.AjoutJoueur(new Joueur(nJoueur4, pJoueur4));
+                                Console.WriteLine("**************************************************");
+                                Console.WriteLine("******************Troisième joueur*****************");
+                                Console.WriteLine("**************************************************");
+                                Console.WriteLine("Entrer le nom:");
+                                String nJoueur5 = Console.ReadLine();
+                                Console.WriteLine("Entrer le prenom:");
+                                String pJoueur5 = Console.ReadLine();
+                                LeJeux.AjoutJoueur(new Joueur(nJoueur5, pJoueur5));
+                                Console.WriteLine("**************************************************");
+                                Console.WriteLine("***************La partie va commencer*************");
+                                Console.WriteLine("**************************************************");
+
+                                System.Threading.Thread.Sleep(2000);
+                                Console.WriteLine("Les cartes sont distribues aux joueurs\n");
+                                LeJeux.DistributCartes();
+                                System.Threading.Thread.Sleep(2000);
+                                LeJeux.PremierJoueur();
+                                break;
+
+                            case "4":
+                                Console.WriteLine("**************************************************");
+                                Console.WriteLine("******************Premier joueur******************");
+                                Console.WriteLine("**************************************************");
+                                Console.WriteLine("Entrer le nom:");
+                                String nJoueur6 = Console.ReadLine();
+                                Console.WriteLine("Entrer le prenom:");
+                                String pJoueur6 = Console.ReadLine();
+                                LeJeux.AjoutJoueur(new Joueur(nJoueur6, pJoueur6));
+                                Console.WriteLine("**************************************************");
+                                Console.WriteLine("******************Deuxième joueur*****************");
+                                Console.WriteLine("**************************************************");
+                                Console.WriteLine("Entrer le nom:");
+                                String nJoueur7 = Console.ReadLine();
+                                Console.WriteLine("Entrer le prenom:");
+                                String pJoueur7 = Console.ReadLine();
+                                LeJeux.AjoutJoueur(new Joueur(nJoueur7, pJoueur7));
+                                Console.WriteLine("**************************************************");
+                                Console.WriteLine("******************Troisième joueur****************");
+                                Console.WriteLine("**************************************************");
+                                Console.WriteLine("Entrer le nom:");
+                                String nJoueur8 = Console.ReadLine();
+                                Console.WriteLine("Entrer le prenom:");
+                                String pJoueur8 = Console.ReadLine();
+                                LeJeux.AjoutJoueur(new Joueur(nJoueur8, pJoueur8));
+                                Console.WriteLine("**************************************************");
+                                Console.WriteLine("******************Quatrième joueur****************");
+                                Console.WriteLine("**************************************************");
+                                Console.WriteLine("Entrer le nom:");
+                                String nJoueur9 = Console.ReadLine();
+                                Console.WriteLine("Entrer le prenom:");
+                                String pJoueur9 = Console.ReadLine();
+                                LeJeux.AjoutJoueur(new Joueur(nJoueur9, pJoueur9));
+                                Console.WriteLine("**************************************************");
+                                Console.WriteLine("***************La partie va commencer*************");
+                                Console.WriteLine("**************************************************");
+
+                                System.Threading.Thread.Sleep(2000);
+                                Console.WriteLine("Les cartes sont distribues aux joueurs\n");
+                                LeJeux.DistributCartes();
+                                System.Threading.Thread.Sleep(2000);
+                                LeJeux.PremierJoueur();
+                                break;
+
+                                //default:
+                                //Console.WriteLine("Entrer le nombre de joueur a creer entre 2 et 4");
+                                //break;
+                        }
+                        break;
+                        //default:
+                        //Console.WriteLine("Vous devez choisir entre 0 et 1");
+                        //break;
+                }
+            }
+            //LeJeux.AjoutJoueur(new Joueur("Patrick", "Duhaime"));
+            //LeJeux.AjoutJoueur(new Joueur("Francis", "Picard"));
+            //LeJeux.AjoutJoueur(new Joueur("Martin", "Couture"));
+
+            //int i = 1;
+            //foreach (Joueur LeJoueur in LeJeux.GetListdesJoueurs)
+            //{
+            //    Console.WriteLine("Joueur" + (i++) + ": {0} {1}", LeJoueur.PrenomJoueur, LeJoueur.NomJoueur);
+            //}
+
+            /*Console.WriteLine("");
 
             System.Threading.Thread.Sleep(2000);
             Console.WriteLine("Les cartes sont distribues aux joueurs\n");
@@ -59,7 +204,7 @@ namespace JeuxCarte
             Console.WriteLine("Le nombre de cartes dans la pioche: {0} cartes", LeJeux.GetNombreCartePioche);
             Console.WriteLine("Le jeux est brasse");
             Console.WriteLine("Est-ce que la pioche est vide? {0}", LeJeux.GetEtatPiocheVide);
-            Console.ReadKey(); //Permet d'arreter la console.
+            Console.ReadKey(); //Permet d'arreter la console.*/
         }
     }
 }
