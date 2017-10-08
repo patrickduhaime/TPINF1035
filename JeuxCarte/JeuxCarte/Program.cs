@@ -14,7 +14,8 @@ namespace JeuCarte
             while (true)
             {
                 Console.WriteLine("***Bienvenue au jeux de la pioche***");
-                Console.WriteLine("Pour débuter la partie, taper 1");
+                Console.WriteLine("Pour debuter la partie, taper 1");
+                Console.WriteLine("Pour debuter une partie automatique, taper 2");
                 Console.WriteLine("Pour quitter, taper 0");
 
                 String choix = Console.ReadLine();
@@ -154,6 +155,20 @@ namespace JeuCarte
                                 LeJeux.PremierJoueur();
                                 break;
                         }
+                        break;
+                    case "2":  //Partie automatique. 
+                        Console.WriteLine("Partie automatique a 3 joueurs");
+                        JeudePioche LeJeuxAutomatique = new JeudePioche(3);
+                        System.Threading.Thread.Sleep(2000);
+                        Console.WriteLine("Les cartes sont distribues aux joueurs\n");
+                        //Création des joueurs
+                        LeJeuxAutomatique.AjoutJoueur(new Joueur("", "Joueur 1"));
+                        LeJeuxAutomatique.AjoutJoueur(new Joueur("", "Joueur 2"));
+                        LeJeuxAutomatique.AjoutJoueur(new Joueur("", "Joueur 3"));
+                        //Distribution des cartes
+                        LeJeuxAutomatique.DistributCartes();
+                        System.Threading.Thread.Sleep(2000);
+                        LeJeuxAutomatique.PremierJoueur();
                         break;
                 }
             }
